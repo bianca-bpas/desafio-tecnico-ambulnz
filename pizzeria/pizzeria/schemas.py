@@ -1,4 +1,5 @@
 from pydantic import BaseModel
 
+
 class HealthCkeck(BaseModel):
-    status: str = "OK"
+    status: str = 'OK'
