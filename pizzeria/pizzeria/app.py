@@ -1,8 +1,10 @@
 from fastapi import FastAPI
 
-app = FastAPI()
+from pizzeria.schemas import HealthCkeck
+from http import HTTPStatus
 
+app = FastAPI(title='Pizzeria API')
 
-@app.get('/')
-def read_root():
-    return {'message': 'Olá Mundo!'}
+@app.get('/api/status', response_model=HealthCkeck)
+def get_api_status():
+    return HealthCkeck(status="OK")
