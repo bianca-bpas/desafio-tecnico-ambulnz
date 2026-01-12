@@ -6,5 +6,11 @@ class HealthCkeck(BaseModel):
 
 class Pizza(BaseModel):
     name: str
-    price: int
+    price: float
     ingredients: list[str]
+
+class PizzaDB(Pizza):
+    id: int
+
+class Pizzas(BaseModel):
+    pizzas: list[PizzaDB]
